@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wetsvoorstel Tracker — Nederlandse Parlement</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="logo">
+                    <svg viewBox="0 0 40 40" width="40" height="40" fill="none">
+                        <rect width="40" height="40" rx="10" fill="#C8102E"/>
+                        <rect x="4" y="4" width="32" height="10" rx="2" fill="#fff"/>
+                        <rect x="4" y="16" width="32" height="8" rx="2" fill="#003DA5"/>
+                    </svg>
+                    <div>
+                        <h1>Wetsvoorstel Tracker</h1>
+                        <p class="subtitle">Volg wetgeving door het Nederlandse parlement</p>
+                    </div>
+                </div>
+                <div class="header-stats">
+                    <div class="stat">
+                        <span class="stat-number" id="stat-behandeling">0</span>
+                        <span class="stat-label">In behandeling</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="stat-aangenomen">0</span>
+                        <span class="stat-label">Aangenomen</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="stat-verworpen">0</span>
+                        <span class="stat-label">Verworpen</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Filter bar -->
+    <nav class="filter-bar">
+        <div class="container">
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Alles</button>
+                <button class="filter-btn" data-filter="tweede-kamer">Tweede Kamer</button>
+                <button class="filter-btn" data-filter="eerste-kamer">Eerste Kamer</button>
+            </div>
+            <div class="search-box">
+                <svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="8.5" cy="8.5" r="6"/>
+                    <line x1="13" y1="13" x2="18" y2="18"/>
+                </svg>
+                <input type="text" id="search" placeholder="Zoek wetsvoorstel...">
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- In behandeling -->
+        <section class="section" id="section-behandeling">
+            <div class="section-header">
+                <h2>
+                    <span class="section-icon behandeling">⏳</span>
+                    In Behandeling
+                </h2>
+                <span class="section-badge" id="badge-behandeling">0</span>
+            </div>
+            <div class="cards-grid" id="grid-behandeling"></div>
+        </section>
+
+        <!-- Aangenomen -->
+        <section class="section" id="section-aangenomen">
+            <div class="section-header">
+                <h2>
+                    <span class="section-icon aangenomen">✅</span>
+                    Aangenomen
+                    <span class="period">afgelopen 6 maanden</span>
+                </h2>
+                <span class="section-badge aangenomen" id="badge-aangenomen">0</span>
+            </div>
+            <div class="cards-grid" id="grid-aangenomen"></div>
+        </section>
+
+        <!-- Verworpen -->
+        <section class="section" id="section-verworpen">
+            <div class="section-header">
+                <h2>
+                    <span class="section-icon verworpen">❌</span>
+                    Verworpen
+                    <span class="period">afgelopen 6 maanden</span>
+                </h2>
+                <span class="section-badge verworpen" id="badge-verworpen">0</span>
+            </div>
+            <div class="cards-grid" id="grid-verworpen"></div>
+        </section>
+
+        <!-- Verwacht -->
+        <section class="section" id="section-verwacht">
+            <div class="section-header">
+                <h2>
+                    <span class="section-icon verwacht">🔮</span>
+                    Verwachte Wetsvoorstellen
+                </h2>
+                <span class="section-badge verwacht" id="badge-verwacht">0</span>
+            </div>
+            <div class="cards-grid" id="grid-verwacht"></div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Wetsvoorstel Tracker &mdash; Onofficieel overzicht van Nederlandse wetgeving</p>
+            <p class="footer-note">Data is indicatief. Raadpleeg <a href="https://www.tweedekamer.nl" target="_blank">tweedekamer.nl</a> en <a href="https://www.eerstekamer.nl" target="_blank">eerstekamer.nl</a> voor officiële informatie.</p>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
